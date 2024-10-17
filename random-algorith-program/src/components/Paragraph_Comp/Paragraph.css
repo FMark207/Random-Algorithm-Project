@@ -3,19 +3,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40vh;
+    height: 80vh;
     width: 100%;
     margin-top: 10vh;
 }
 
 .paragraph-text{
     width: 50%;
+    display: flex;
+    gap: 20px   ;
+    flex-direction: column;
 }
 
 .paragraph-text h1{
     font-size: 4rem;
+
 }
 
 .paragraph-text p{
     font-size: 1.5rem;
+}
+
+.alg-display{
+    width: 39%;
 }
