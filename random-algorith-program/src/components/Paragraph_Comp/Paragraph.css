@@ -1,0 +1,21 @@
+.paragraph{
+    color: #FDFEFE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+.paragraph-text{
+    width: 50%;
+}
+
+.paragraph-text h1{
+    font-size: 4rem;
+}
+
+.paragraph-text p{
+    font-size: 1.5rem;
+}

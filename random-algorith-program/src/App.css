@@ -9,46 +9,8 @@
 
 body{
   background-color: #04020C;
-  height: 100vh;
+  height: 200vh;
   width: 100%;
   font-family: lato;
-}
-
-
-.header{
-  width: 100%;
-  height: 40vh;
-  color: #FDFEFE;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.header-text{
-  font-size: 2rem;
-  word-spacing: 5px;
-}
-
-.header-title{
-  font-size: 5rem;
-}
-
-.grad-text{
-  background: linear-gradient(90deg, rgba(214,71,226,1) 0%, rgba(76,193,237,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.header-btn{
-  margin-top: 2%;
-  width: 20%;
-  padding: 20px;
-  border-radius: 50px;
-  border: none;
-  background-color: #6DE798;
-  color: #2c4740;
-  font-size: 1.3rem;
-  font-weight: 600;
+  overflow-x: hidden;
 }
