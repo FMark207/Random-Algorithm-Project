@@ -68,7 +68,10 @@ local function generateWords()
     writeToFile(words)
 end
 
-local function testForNums()
+local testForWords
+local testForNums
+
+local testForNums = function()
     print(string.rep("-", 40))
     io.write('How many numbers were generated?: ')
     local quantity = io.read("n")
@@ -115,7 +118,7 @@ local function testForNums()
     end
 end
 
-local function testForWords()
+local testForWords = function()
     print(string.rep("-", 40))
     io.write("What was the length of the words?: ")
     local length = io.read("n")
@@ -178,6 +181,20 @@ local function testFile()
 
     for index, value in ipairs(functions) do
         if index == choice then
+            local f = io.open("ki.txt","r")
+            for line in f:lines() do
+                for token in string.gmatch(line, "[^;]+") do
+                    if choice==1 and tonumber(token, 10) == nil then
+                        print("Switching to word checking!")
+                        testForWords()
+                    end
+                    if choice==2 and tonumber(token, 10) ~= nil then
+                        print("Switching to number checking!")
+                        testForNums()
+                    end
+                end
+            end
+            io.close(f)
             value()
         end
     end
@@ -197,6 +214,8 @@ local function readFile()
     end
     print("")
 end
+
+
 local function main()
     local options = { "Generate numbers", "Generate words", "Test the output file", "Read the output file" }
     local functions = { generateNums, generateWords, testFile, readFile }
