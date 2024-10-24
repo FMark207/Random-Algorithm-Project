@@ -8,18 +8,16 @@ import quickIntSort from "./Qintsort.gif"
 import intSort from "./intsort.gif"
 import Tab from './components/Paragraph_Comp/Paragraph';
 import stringSort from "./stringSort.png"
-import { useRef } from "react";
 
 
 
 function App() {
-  const resultRef = useRef(null);
-  return (
 
+  return (
     
     <> 
-      <Header resultRef={resultRef}/>
-      <Cards ref={resultRef}/>
+      <Header />
+      <Cards />
       <Tab source={intSort} 
       title="Int Sorting"
       desc="The basic idea behind sorting is to compare integers in a list and rearrange them based on their value. For example, in ascending order, smaller numbers will appear before larger numbers, while in descending order, larger numbers will appear first."
