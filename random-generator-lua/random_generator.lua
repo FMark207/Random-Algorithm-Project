@@ -183,25 +183,29 @@ local function testFile()
         choice = io.read("n")
     until choice > 0 and choice <= #functions
 
+    local checker = ""
     for index, value in ipairs(functions) do
         if index == choice then
             local f = io.open("ki.txt","r")
             for line in f:lines() do
                 for token in string.gmatch(line, "[^;]+") do
-                    if choice==1 and tonumber(token, 10) == nil then
-                        print("Switching to word checking!")
-                        testForWords()
-                    end
-                    if choice==2 and tonumber(token, 10) ~= nil then
-                        print("Switching to number checking!")
-                        testForNums()
-                    end
+                    checker = token
                 end
             end
-            io.close(f)
+            if choice==1 and tonumber(checker, 10) == nil then
+                print("Switching to word checking!")
+                testForWords()
+                break
+            end
+            if choice==2 and tonumber(checker, 10) ~= nil then
+                print("Switching to number checking!")
+                testForNums()
+                break
+            end
             value()
+            io.close(f)
         end
-    end
+    end 
 end
 local function readFile()
     if io.open("ki.txt","r")==nil then
