@@ -63,7 +63,7 @@ namespace sortProgram
         {
             var i = leftIndex;
             var j = rightIndex;
-            var pivot = array[(leftIndex + rightIndex) / 2]; // Choose the middle element as pivot to avoid worst-case scenarios
+            var pivot = array[leftIndex];
             while (i <= j)
             {
                 while (array[i] < pivot) 
