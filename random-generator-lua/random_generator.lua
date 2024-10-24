@@ -167,6 +167,10 @@ local testForWords = function()
 end
 
 local function testFile()
+    if io.open("ki.txt","r")==nil then
+        print("File non-existent!")
+        os.exit()
+    end
     print(string.rep("-", 40))
     local funcNames = { "Test for numbers", "Test for words" }
     local functions = { testForNums, testForWords }
@@ -200,6 +204,10 @@ local function testFile()
     end
 end
 local function readFile()
+    if io.open("ki.txt","r")==nil then
+        print("File non-existent!")
+        os.exit()
+    end
     print(string.rep("-", 40))
     local file = io.open("ki.txt", "r")
     local contents = {}
